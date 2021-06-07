@@ -21,27 +21,38 @@ your view should only keep the pair, such that the name with the lowest ·pid· 
 
 ### Schema and Test Data
 ```
-DROP TABLE IF EXISTS `Person`;
-DROP TABLE IF EXISTS `Relationship`;
+DROP 
+  TABLE IF EXISTS `Person`;
+DROP 
+  TABLE IF EXISTS `Relationship`;
+  
 CREATE TABLE IF NOT EXISTS `Person` (
-  `pid` int(6) unsigned NOT NULL,
-  `name` varchar(200) NOT NULL,
+  `pid` int(6) unsigned NOT NULL, 
+  `name` varchar(200) NOT NULL, 
   PRIMARY KEY (`pid`)
-) DEFAULT CHARSET=utf8;
-INSERT INTO `Person` (`pid`, `name`) VALUES
-  ('1',  'nick'),
-  ('2', 'tom'),
-  ('3', 'mike'),
+) DEFAULT CHARSET = utf8;
+INSERT INTO `Person` (`pid`, `name`) 
+VALUES 
+  ('1', 'nick'), 
+  ('2', 'tom'), 
+  ('3', 'mike'), 
   ('4', 'bob');
 
 CREATE TABLE IF NOT EXISTS `Relationship` (
-  `pid1` int(6) unsigned NOT NULL,
-  `rel` varchar(200) NOT NULL,
-  `pid2` int(6) unsigned NOT NULL,
-  FOREIGN KEY (`pid1`) REFERENCES `Person` (`pid`),
-  FOREIGN KEY (`pid2`) REFERENCES `Person` (`pid`));
+  `pid1` int(6) unsigned NOT NULL, 
+  `rel` varchar(200) NOT NULL, 
+  `pid2` int(6) unsigned NOT NULL, 
+  FOREIGN KEY (`pid1`) REFERENCES `Person` (`pid`), 
+  FOREIGN KEY (`pid2`) REFERENCES `Person` (`pid`)
+);
+INSERT INTO `Relationship` (`pid1`, `rel`, `pid2`) 
+VALUES 
+  (1, 'friend', 2), 
+  (2, 'friend', 1), 
+  (1, 'friend', 3), 
+  (3, 'enemy', 2), 
+  (2, 'enemy', 3);
 
-INSERT INTO `Relationship` (`pid1`, `rel`, `pid2`) VALUES (1, 'friend', 2), (2, 'friend', 1), (1, 'friend', 3), (3, 'enemy', 2),(2, 'enemy', 3); 
 ```
 
 ### SQL Query
