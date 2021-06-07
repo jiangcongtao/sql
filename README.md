@@ -15,7 +15,7 @@ Note that the relationship is not necessarily symmetric:  if Alice is friend wit
 >
 1. Q1: Create a view called `mutual` that contains pairs of people who share mutual feelings for each other (i.e., they consider each other friends or enemies). 
 The schema of your view should be mutual(name1,name2). Note that your view should not repeat the same pair of people in different order (e.g.,`(Alice,Bob)` and `(Bob,Alice)`); 
-your view should only keep the pair, such that the name with the lowestpidappears first.
+your view should only keep the pair, such that the name with the lowest ·pid· appears first.
 
 ## Solution
 
