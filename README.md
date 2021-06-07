@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `Relationship` (
 INSERT INTO `Relationship` (`pid1`, `rel`, `pid2`) VALUES (1, 'friend', 2), (2, 'friend', 1), (1, 'friend', 3), (3, 'enemy', 2),(2, 'enemy', 3); 
 ```
 
-## SQL query
+### SQL Query
 ```
 CREATE OR REPLACE VIEW mutual (name1, name2)
 AS
@@ -60,3 +60,5 @@ AS
 
 SELECT * FROM mutual;
 ```
+### Test in DB-Fiddle
+![Test in DB-Fiddle](img/dbfiddle-test.png)
