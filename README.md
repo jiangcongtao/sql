@@ -1,4 +1,4 @@
-# SQL for Querying Mutual Relatiopship
+# SQL for Querying Mutual Relatiopnship
 
 ## Description
 Consider a social network database, about people and their relationships.  The database has two relations:
